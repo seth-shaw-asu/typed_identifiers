@@ -10,7 +10,7 @@ Sequel.migration do
       Integer :lock_version, :default => 0, :null => false
       Integer :json_schema_version, :null => false
       Integer :digital_object_id
-      DynamicEnum :id_type
+      DynamicEnum :id_type_id, :null => true
       String :identifier
 
       apply_mtime_columns
