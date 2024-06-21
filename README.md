@@ -35,3 +35,7 @@ identifier types.
 
 - Add indexing.
 - Add to the public UI.
+
+## Acknowledgement
+
+This plugin is *heavily* based on [WGBH-MLA/pbspace](https://github.com/WGBH-MLA/pbspace) which provides it's own "additional identifier" field.
