@@ -1,30 +1,10 @@
-<% define_template "typed_identifiers", jsonmodel_definition(:typed_identifier) do |form| %>
+<% define_template "typed_identifier", jsonmodel_definition(:typed_identifier) do |form| %>
   <div class="subrecord-form-fields">
-
+    <div class="typed-identifier-control-container">
       <%= form.label_and_select "id_type",
         [""] + form.possible_options_for("id_type", false) %>
 
       <%= form.label_and_textfield "identifier",  {:field_opts => {:size => 30, :class => "form-control"} }%>
+    <div>
   </div>
-<% end %>
-
-<% define_template "typed_identifier_merge_target", jsonmodel_definition(:typed_identifier) do |form| %>
-
-  <%= form.record_level_merge_controls(form, "identifier", false) %>
-
-  <% field_names = ["id_type", "identifier"] %>
-  <% field_names.each do |field_name| %>
-    <%= form.label_and_readonly field_name %>
-  <% end %>
-<% end %>
-
-<% define_template "typed_identifier_merge_victim", jsonmodel_definition(:typed_identifier) do |form| %>
-
-  <% disable_replace = true %>
-
-  <%= form.record_level_merge_controls(form, "typed_identifier", true, !disable_replace) %>
-
-  <%= form.label_and_readonly "identifier" %>
-  <%= form.label_and_readonly "id_type" %>
-
 <% end %>
