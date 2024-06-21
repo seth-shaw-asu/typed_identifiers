@@ -1,0 +1,26 @@
+en:
+  typed_identifier:
+    identifier: Identifier
+    type: Type
+    created_by: Created By
+    last_modified_by: Last Modified By
+    create_time: Created
+    system_mtime: System Modified Time
+    user_mtime: User Modified Time
+    jsonmodel_type: JSON Model
+    _singular: Typed Identifier
+    _plural: Typed Identifiers
+    _frontend:
+      action:
+        add: Add Identifier
+  enumerations:
+    typed_identifier_types:
+      local: Local
+      hdl: Handle
+      ark: Archival Resource Key
+      doi: Digital Object Identifier
+      uuid: Universally Unique Identifier
+      isbn: International Standard Book Number
+      uri: Uniform Resource Identifier
+      urn: Uniform Resource Name
+      upc: Universal Product Code
