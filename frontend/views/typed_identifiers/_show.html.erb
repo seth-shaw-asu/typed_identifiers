@@ -1,28 +1,17 @@
 <%
    section_id = "typed_identifiers" if section_id.blank?
-   section_title = "Typed IDs" if section_title.blank?
 %>
 
 <section id="<%= section_id %>">
-  <h3><%= section_title %></h3>
-  <div class="details my-3" id="<%= section_id %>_accordion">
-    <% typed_identifiers.each_with_index do | typed_identifier, index | %>
-      <div class="card mb-3">
-        <div class="card-header panel-heading">
-          <div class="row accordion-toggle collapsed" data-toggle="collapse" data-parent="#<%= section_id %>_accordion" href="#<%= section_id %>_typed_identifier_<%= index %>">
-            <div class="col-md-1">
-              <span class="glyphicon"></span>
-            </div>
-            <div class="col-md-6">
-              <%= typed_identifier["typed_identifier"] %>
-
-            </div>
-          </div>
-        </div>
-        <div id="<%= section_id %>_typed_identifier_<%= index %>" class="panel-collapse collapse">
-          <%= read_only_view(typed_identifier) %>
-        </div>
+  <h3><%= I18n.t("typed_identifier._plural") %></h3>
+  <% typed_identifiers.each_with_index do | typed_identifier, index | %>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">
+        <%= I18n.t("enumerations.typed_identifier_type." + typed_identifier["id_type"]) %> (<%= typed_identifier["id_type"] %>)
+      </label>
+      <div class="col-sm-10 label-only">
+          <%= typed_identifier["identifier"] %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </section>

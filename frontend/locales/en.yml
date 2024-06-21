@@ -1,7 +1,7 @@
 en:
   typed_identifier:
     identifier: Identifier
-    type: Type
+    id_type: Type
     created_by: Created By
     last_modified_by: Last Modified By
     create_time: Created
@@ -13,8 +13,10 @@ en:
     _frontend:
       action:
         add: Add Identifier
+  enumeration_names:
+    typed_identifier_type: Typed Identifier Types
   enumerations:
-    typed_identifier_types:
+    typed_identifier_type:
       local: Local
       hdl: Handle
       ark: Archival Resource Key
